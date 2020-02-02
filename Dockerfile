@@ -7,7 +7,8 @@ RUN apk add --no-cache \
 	postfix-ldap \
 	postfix-pcre \
 	policyd-spf-fs \
-	rsyslog
+	rsyslog \
+	openrc
 
 RUN apk add --no-cache \
 	dovecot \
@@ -21,7 +22,9 @@ RUN apk update dovecot
 COPY postfix /etc/postfix
 COPY dovecot /etc/dovecot
 
+#CMD ["/usr/sbin/postfix", "start"]
 #CMD ["rc-system", "dovecot", "restart"]
-#CMD ["postfix", "start"]
 
 EXPOSE 24 25 110 143 993 995
+
+#ENTRYPOINT ["/bin/sh", "-c", "/usr/sbin/postfix", "start"]
