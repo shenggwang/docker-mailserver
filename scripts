@@ -1,4 +1,4 @@
-docker build . -t docker.ledgerai.net/email:1.0.0 -f Dockerfile
+docker build -t docker.ledgerai.net/email:1.0.0 .
 
 docker run -d -t --name mailserver docker.ledgerai.net/email:1.0.0
 

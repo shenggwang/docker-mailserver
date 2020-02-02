@@ -22,9 +22,6 @@ RUN apk update dovecot
 COPY postfix /etc/postfix
 COPY dovecot /etc/dovecot
 
-#CMD ["/usr/sbin/postfix", "start"]
-#CMD ["rc-system", "dovecot", "restart"]
-
 EXPOSE 24 25 110 143 993 995
 
-#ENTRYPOINT ["/bin/sh", "-c", "/usr/sbin/postfix", "start"]
+CMD ["sh","-c","/usr/sbin/postfix start && tail -f /dev/null"]
