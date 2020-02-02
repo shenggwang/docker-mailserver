@@ -1,0 +1,7 @@
+driver = pgsql
+
+connect = host=192.168.2.3 dbname=mailserver user=mailserver password=mailserver
+
+default_pass_scheme = SHA512-CRYPT
+
+password_query = SELECT email as user, password FROM users WHERE email='%u';

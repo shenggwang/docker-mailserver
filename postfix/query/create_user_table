@@ -1,0 +1,2 @@
+#!/bin/sh
+postmap -q ledgerai.net pgsql:/etc/postfix/create_user_query
