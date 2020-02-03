@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  mailserver:
+    container_name: mailserver
+    image: docker.ledgerai.net/mailserver:1.0.0
+    restart: unless-stopped
+    volumes:
+      - './postfix:/etc/postfix'
+      - './dovecot:/etc/dovecot'
+    ports:
+      - '25:25'
+      - '110:110'
+      - '143:143'
+      - '993:993'
+      - '995:995'
+    networks:
+      main:
+
+networks:
+  main:
+    name: ledgerai
