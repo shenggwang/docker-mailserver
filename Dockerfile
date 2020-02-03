@@ -24,4 +24,4 @@ COPY dovecot /etc/dovecot
 
 EXPOSE 24 25 110 143 993 995
 
-CMD ["sh","-c","/usr/sbin/postfix start && tail -f /dev/null"]
+ENTRYPOINT ["/bin/sh","-c","/etc/postfix/start.sh"]
