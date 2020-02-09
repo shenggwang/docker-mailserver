@@ -1,3 +1,3 @@
 #!/bin/sh
 /usr/sbin/postfix start
-/bin/sh
+tail -f /dev/null
