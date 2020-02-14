@@ -1,4 +1,4 @@
-docker build . -t docker.ledgerai.net/mailserver:1.0.0
+docker build . -t docker.ledgerai.net/mailserver:1.0.0 --rm
 
 docker-compose up -d --no-deps --build
 

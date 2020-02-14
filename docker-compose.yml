@@ -2,12 +2,12 @@ version: '3.7'
 services:
   mailserver:
     container_name: mailserver
-    build: .
-    image: mailserver:1.0.0
+#    build: .
+    image: docker.ledgerai.net/mailserver:1.0.0
     restart: unless-stopped
     volumes:
-      - './postfix:/etc/postfix'
-      - './dovecot:/etc/dovecot'
+      - './postfix/start.sh:/etc/postfix/start.sh'
+      - './dovecot/dovecot.conf:/etc/dovecot/dovecot.conf'
     ports:
       - '25:25'
       - '110:110'
